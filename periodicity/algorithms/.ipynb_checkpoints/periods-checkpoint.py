@@ -23,7 +23,6 @@ def get_full_width(x: np.ndarray, y: np.ndarray, peak:np.ndarray,height: float =
         x_low = np.interp(height_half_max, y[:index_max-3:index_max],  x[:index_max-3:index_max])
         x_high = np.interp(height_half_max, np.flip(y[index_max::index_max+3]), np.flip(x[index_max::index_max+3]))
         
-        
         if( index_max - 5 > 0 ):
             inversefunction = interpolate.interp1d(y[index_max-5:index_max],  x[index_max-5:index_max], kind='cubic',fill_value="extrapolate")
             inversefunction2 = interpolate.interp1d(y[index_max:index_max+5],  x[index_max:index_max+5], kind='cubic',fill_value="extrapolate")
@@ -45,7 +44,7 @@ def get_full_width(x: np.ndarray, y: np.ndarray, peak:np.ndarray,height: float =
 
 
 def periods (data,ngrid, plot = False, peakHeight = 0.6,  minfq = 500, maxfq = 10): 
-        """Perform period determination for the output of hybrid2d data
+    """Perform period determination for the output of hybrid2d data
 
         Parameters
         ----------
@@ -56,7 +55,7 @@ def periods (data,ngrid, plot = False, peakHeight = 0.6,  minfq = 500, maxfq = 1
         peakHeight: max peak height
         plot: True of Folse
 
-        """
+    """
     
     hh1=np.rot90(data).T/np.rot90(data).T.max()
     hh1arr=np.rot90(hh1.T)
@@ -133,7 +132,7 @@ def signif_johnoson(numlc, peak, corr,  tt, yy, ntau,ngrid, f = 2, peakHeight = 
         minfq : minimum frequency
         maxfq : maximum fraquency
         peakHeight: max peak height
-        """
+    """
     hh1=np.rot90(corr).T/np.rot90(corr).T.max()
     hh1arr=np.rot90(hh1.T)
     hh1arr1=np.abs(hh1arr).sum(1)/np.abs(hh1arr).sum(1).max()

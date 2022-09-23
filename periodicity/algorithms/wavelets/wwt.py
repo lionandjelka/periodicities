@@ -21,7 +21,7 @@ def compute_frequency_grid(Nn, minfq = 500, maxfq = 10):
 
 
 def inp_param(ntau,ngrid, f = 2, minfq = 500, maxfq = 10):
-       """Calculate the imput parameteres of WWZ
+    """Calculate the imput parameteres of WWZ
 
         Parameters
         ----------
@@ -29,7 +29,7 @@ def inp_param(ntau,ngrid, f = 2, minfq = 500, maxfq = 10):
         ngrid: grid size
         f: for calculation of decay constant
 
-        """
+    """
     
     df, fmin, fmax = compute_frequency_grid(ngrid, minfq, maxfq)
     
@@ -84,7 +84,7 @@ def wwt(tt, mag,ntau,ngrid, f = 2, minfq = 500, maxfq = 10,  method = 'linear'):
 
 
 def hybrid2d(tt, mag,ntau,ngrid, f = 2, minfq = 500, maxfq = 10,  method = 'linear'):
-     """Perform hybrid2d method on given data 
+    """Perform hybrid2d method on given data 
 
         Parameters
         ----------
@@ -95,7 +95,7 @@ def hybrid2d(tt, mag,ntau,ngrid, f = 2, minfq = 500, maxfq = 10,  method = 'line
         maxfq : maximum fraquency
         method : "linear" / "octave"
 
-        """
+    """
     
     #Perform wwz of data
     wwz_matrix = wwt(tt, mag, ntau, ngrid, f, minfq, maxfq, method)

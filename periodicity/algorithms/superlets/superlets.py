@@ -4,7 +4,7 @@ from superlet import gen_superlet_testdata,
 
 
 def superlets_methods(tt, mag,ntau, f = 2, minfq = 500, maxfq = 10,  method = 'linear'):
-         """Perform hybrid2d method using superlets
+    """Perform hybrid2d method using superlets
 
         Parameters
         ----------
@@ -14,7 +14,7 @@ def superlets_methods(tt, mag,ntau, f = 2, minfq = 500, maxfq = 10,  method = 'l
         minfq : minimum frequency
         maxfq : maximum fraquency
 
-        """
+    """
     flist=np.arange(minfq,maxfq,ntau)
     scales1=scale_from_period(1/flist)
     gg=superlet(
