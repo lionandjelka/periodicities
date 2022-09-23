@@ -10,7 +10,7 @@ from traitlets.traitlets import Integer
 
 
 
-# NEW FUNCTION 1. 9. 2022.
+
 
 def compute_frequency_grid(Nn, minfq = 500, maxfq = 10):
     fmin =1/minfq
@@ -21,6 +21,15 @@ def compute_frequency_grid(Nn, minfq = 500, maxfq = 10):
 
 
 def inp_param(ntau,ngrid, f = 2, minfq = 500, maxfq = 10):
+       """Calculate the imput parameteres of WWZ
+
+        Parameters
+        ----------
+        ntau : int, number of time
+        ngrid: grid size
+        f: for calculation of decay constant
+
+        """
     
     df, fmin, fmax = compute_frequency_grid(ngrid, minfq, maxfq)
     
@@ -49,6 +58,18 @@ def inp_param(ntau,ngrid, f = 2, minfq = 500, maxfq = 10):
 
 
 def wwt(tt, mag,ntau,ngrid, f = 2, minfq = 500, maxfq = 10,  method = 'linear'):
+    """Calculate the wwz of the given signal
+
+        Parameters
+        ----------
+        tt : list of time data
+        mag : list of magnitude values
+        ntau, ngrid : values for controling wwz execution (see inp_param function)
+        minfq : minimum frequency
+        maxfq : maximum fraquency
+        method : "linear" / "octave"
+
+        """
     
     ntau,params,decay_constant, parallel=inp_param(ntau, ngrid, f, minfq, maxfq)
     
@@ -63,6 +84,18 @@ def wwt(tt, mag,ntau,ngrid, f = 2, minfq = 500, maxfq = 10,  method = 'linear'):
 
 
 def hybrid2d(tt, mag,ntau,ngrid, f = 2, minfq = 500, maxfq = 10,  method = 'linear'):
+     """Perform hybrid2d method on given data 
+
+        Parameters
+        ----------
+        tt : list of time data
+        mag : list of magnitude values
+        ntau, ngrid : values for controling wwz execution (see inp_param function)
+        minfq : minimum frequency
+        maxfq : maximum fraquency
+        method : "linear" / "octave"
+
+        """
     
     #Perform wwz of data
     wwz_matrix = wwt(tt, mag, ntau, ngrid, f, minfq, maxfq, method)
