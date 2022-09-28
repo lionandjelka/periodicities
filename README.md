@@ -26,10 +26,10 @@ preliminary repository https://github.com/LSST-sersag/periodicities
         </ol>
 
 <b> To start we recommend you to see our notebook toutorials: </b> <br>
-<a href=""> Tutorial 1 </a>
+<a href="https://github.com/LSST-sersag/periodicities/blob/main/periodicity/ShortTutorial.ipynb"> Tutorial 1 </a>
 <a href=""> Tutorial 2 </a>
 
-<b> Also we recomend to see our results obtained using AGN DC data : <a href=""> link </a> </b>
+<b> Also we recomend to see our results obtained using AGN DC data : <a href="https://github.com/LSST-sersag/periodicities/tree/main/agc_dc_results"> link </a> </b>
   
   
  <h3 id="inkind">  Introduction to in-kind proposal.</h3>
